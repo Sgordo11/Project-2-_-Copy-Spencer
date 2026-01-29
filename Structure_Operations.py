@@ -83,12 +83,12 @@ def ComputeReactions(nodes):
         sum_forces_y += node.yforce_external
         sum_forces_x += node.xforce_external
 
-    pin_reaction = 0
-    if(pin_node.constraint=="roller_no_xdisp"):
-        pin_reaction -= sum_forces_y
-        pin_node.AddReactionYforce(pin_reaction)
-    elif(pin_node.constraint=="roller_no_ydisp"):
-        pin_reaction -= sum_forces_x
-        pin_node.AddReactionXforce(pin_reaction)
+
+    if roller_node.constraint=="roller_no_xdisp":
+        sum_forces_x += roller_reaction
+    elif roller_node.constraint=="roller_no_ydisp":
+        sum_forces_y += roller_reaction
+    pin_node.AddReactionXForce(-sum_forces_x)
+    pin_node.AddReactionYForce(-sum_forces_y)
     
     
