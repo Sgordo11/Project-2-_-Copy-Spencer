@@ -12,7 +12,7 @@ import sys
 
 # length of the beam
 def Length(bar):
-    bar_vector = BarNodeToVector(bar.init_node, Bar)
+    bar_vector = BarNodeToVector(bar.init_node, bar)
     bar_length = VectorTwoNorm(bar_vector)
     return bar_length
 
