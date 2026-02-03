@@ -70,7 +70,7 @@ def ComputeReactions(nodes):
     if(roller_node.constraint=="roller_no_xdisp"):
         roller_reaction = -roller_reaction/(pin_y - roller_y)
         roller_node.AddReactionXForce(roller_reaction)
-    elif(roller_node.constraint=='roller_no_xdisp'):
+    elif(roller_node.constraint=='roller_no_ydisp'):
         roller_reaction = -roller_reaction/(roller_x - pin_x)
         roller_node.AddReactionYForce(roller_reaction)
 
