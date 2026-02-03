@@ -12,8 +12,9 @@ import sys
 
 # length of the beam
 def Length(bar):
-    bar_node = bar.init_node
-    return bar_node
+    bar_vector = BarNodeToVector(bar.init_node, Bar)
+    bar_length = VectorTwoNorm(bar_vector)
+    return bar_length
 
 # Find two norm (magnitude) of a vector
 def VectorTwoNorm(vector):
@@ -59,7 +60,7 @@ def BarsToVectors(bar_1,bar_2):
     #find the vectors
     vec1 = BarNodeToVector(node, bar_1)
     vec2 = BarNodeToVector(node, bar_2)
-    return vec1, vec2
+    return (vec1, vec2)
 
 # Cross product of two vectors
 def TwoDCrossProduct(vec1,vec2):
